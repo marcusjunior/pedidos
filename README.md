@@ -44,7 +44,7 @@ Para executar a aplicação, basta executar o arquivo:
 
 Após o servidor ser iniciado, a API está disponível para testes via swagger na url:
 
-[http://localhost:8080/swagger-ui.html]
+http://localhost:8080/swagger-ui.html
 
 Os endpoints disponíveis na API são:
 
