@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "90965d93-d908-409a-b619-07b017dcff77",
+		"name": "API-Pedidos-Eicon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "XML",
+			"item": [
+				{
+					"name": "Criar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<PedidoResource>\r\n\t<codigoCliente>2</codigoCliente>\r\n\t<dataCadastro>2020-02-28</dataCadastro>\r\n\t<nomeProduto>Teste XML</nomeProduto>\r\n\t<numeroControle>4</numeroControle>\r\n\t<quantidadeProduto>11</quantidadeProduto>\r\n\t<valorUnitarioProduto>20</valorUnitarioProduto>\r\n</PedidoResource>"
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar por Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/pedidos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar pedido em lote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<List>\r\n  <item>\r\n    <numeroControle>22</numeroControle>\r\n    <dataCadastro>2020-02-28</dataCadastro>\r\n    <nomeProduto>Produto de Teste</nomeProduto>\r\n    <valorUnitarioProduto>20.0</valorUnitarioProduto>\r\n    <quantidadeProduto>5</quantidadeProduto>\r\n    <codigoCliente>1</codigoCliente>\r\n    <valorTotalPedido>100.0</valorTotalPedido>\r\n  </item>\r\n  <item>\r\n    <numeroControle>23</numeroControle>\r\n    <dataCadastro>2020-02-29</dataCadastro>\r\n    <nomeProduto>Produto de Teste</nomeProduto>\r\n    <valorUnitarioProduto>20.0</valorUnitarioProduto>\r\n    <quantidadeProduto>6</quantidadeProduto>\r\n    <codigoCliente>1</codigoCliente>\r\n    <valorTotalPedido>114.0</valorTotalPedido>\r\n  </item>\r\n  <item>\r\n    <numeroControle>24</numeroControle>\r\n    <dataCadastro>2020-02-29</dataCadastro>\r\n    <nomeProduto>Produto de Teste</nomeProduto>\r\n    <valorUnitarioProduto>20.0</valorUnitarioProduto>\r\n    <quantidadeProduto>1</quantidadeProduto>\r\n    <codigoCliente>1</codigoCliente>\r\n    <valorTotalPedido>20.0</valorTotalPedido>\r\n  </item>\r\n</List>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/pedidos/lote",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"pedidos",
+								"lote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pesquisar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/pedidos?dataCadastro=2020-02-28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "dataCadastro",
+									"value": "2020-02-28"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "JSON",
+			"item": [
+				{
+					"name": "Criar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigoCliente\": 1,\r\n  \"dataCadastro\": \"2020-02-28\",\r\n  \"nomeProduto\": \"Produto de Teste\",\r\n  \"numeroControle\": 1,\r\n  \"quantidadeProduto\": 2,\r\n  \"valorUnitarioProduto\": 100\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar por Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/pedidos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar pedido em lote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 12,\r\n\t  \"quantidadeProduto\": 8,\r\n\t  \"valorUnitarioProduto\": 20\r\n\t},\r\n\t\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 13,\r\n\t  \"quantidadeProduto\": 2,\r\n\t  \"valorUnitarioProduto\": 100\r\n\t},\r\n\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 14,\r\n\t  \"quantidadeProduto\": 8,\r\n\t  \"valorUnitarioProduto\": 20\r\n\t},\r\n\t\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 15,\r\n\t  \"quantidadeProduto\": 2,\r\n\t  \"valorUnitarioProduto\": 100\r\n\t},\r\n\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 16,\r\n\t  \"quantidadeProduto\": 8,\r\n\t  \"valorUnitarioProduto\": 20\r\n\t},\r\n\t\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 17,\r\n\t  \"quantidadeProduto\": 2,\r\n\t  \"valorUnitarioProduto\": 100\r\n\t},\r\n\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 18,\r\n\t  \"quantidadeProduto\": 8,\r\n\t  \"valorUnitarioProduto\": 20\r\n\t},\r\n\t\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 19,\r\n\t  \"quantidadeProduto\": 2,\r\n\t  \"valorUnitarioProduto\": 100\r\n\t},\r\n\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 20,\r\n\t  \"quantidadeProduto\": 8,\r\n\t  \"valorUnitarioProduto\": 20\r\n\t},\r\n\t{\r\n\t  \"codigoCliente\": 1,\r\n\t  \"dataCadastro\": \"2020-02-28\",\r\n\t  \"nomeProduto\": \"Produto de Teste\",\r\n\t  \"numeroControle\": 21,\r\n\t  \"quantidadeProduto\": 8,\r\n\t  \"valorUnitarioProduto\": 20\r\n\t}\r\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/pedidos/lote",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"pedidos",
+								"lote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pesquisar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/pedidos?dataCadastro=2020-02-28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "dataCadastro",
+									"value": "2020-02-28"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
