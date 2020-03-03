@@ -16,7 +16,7 @@ Esta é uma API para criação e consulta de pedidos
 
 A API está disponível na cloud da heroku para testes e exploração:
 
-[https://api-pedidos-sandbox.herokuapp.com/swagger-ui.html]
+https://api-pedidos-sandbox.herokuapp.com/swagger-ui.html
 
 ## Instalação local
 
