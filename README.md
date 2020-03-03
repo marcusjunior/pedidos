@@ -22,7 +22,7 @@ URL do banco:
 
 ```pedidos.ceiqbsjm6j7u.sa-east-1.rds.amazonaws.com```
 
-Para configurar um novo banco ou executar a aplicação localmente, basta atualizar a url e as credenciais do banco no arquivo:
+Para configurar um novo banco na aplicação basta atualizar a url e as credenciais do banco no arquivo:
 
 ```application.properties```
 
@@ -48,7 +48,7 @@ Os endpoints disponíveis na API são:
 
 * `GET - /v1/pedidos/{id}` - consulta pedidos por id
 
-* `POST - /v1/pedidos/lote` - criar pedidos em lote, limitado a 10 pedidos por arquivo
+* `POST - /v1/pedidos/lote` - cria pedidos em lote, limitado a 10 pedidos por arquivo
 
 É possível chamar todos serviços tanto no formato JSON quanto XML.
 
